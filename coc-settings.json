@@ -1,0 +1,27 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "html",
+        "go",
+        "dart",
+        "java",
+        "c",
+        "sql",
+        "python"
+    ],
+    "sql.lintOnOpen": false,
+    "sql.lintOnChange": false,
+    "sql.lintOnSave": false,
+    "languageserver": {
+        "go": {
+            "command": "gopls",
+            "rootPatterns": [
+                "go.mod"
+            ],
+            "trace.server": "verbose",
+            "filetypes": [
+                "go"
+            ]
+        }
+    }
+}
