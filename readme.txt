@@ -7,7 +7,7 @@ Personal vim configuration files.
 Installation & Dependencies
 ===========================
 
-$ git clone --recursive git@git.n1t0r.com:n1t0r/dotvim.git ~/.config/nvim
+$ git clone --recursive git@git.n1t0r.com:dotvim.git ~/.vim
 
 Python:
 
@@ -30,16 +30,20 @@ $ rustup component add rls rust-analysis rust-src
 Installing plugins
 ==================
 
-$ git submodule add plugins-repo bundle/plugin-name
+$ git submodule add <repository> <path>
 
 Removing plugins
 ================
 
-$ git submodule deinit bundle/plugin
-$ git rm bundle/plugin
-$ rm -rf .git/modules/bundle/plugin
+$ git rm <path-to-submodule>
+
+Git will keep the plugin to maintain the ability of checking commits that depend
+on them. In order to remove those remnants:
+
+$ rm -rf .git/modules/<path-to-submodule>
+$ git config --remove-selection submodule.<path-to-submodule>
 
 Updating plugins
 ================
 
-$ git submodule update --recursive --remote --merge
+$ git submodule update --recursive --remote 
