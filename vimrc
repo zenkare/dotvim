@@ -3,6 +3,9 @@ filetype plugin indent on
 
 let mapleader=' '
 
+" Disable netrw history from being created in ~/.vim/.netrwhist
+let g:netrw_dirhistmax=0
+
 " Line numbers
 set number
 set relativenumber
