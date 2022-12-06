@@ -1,8 +1,6 @@
 syntax on
 filetype plugin indent on
 
-" set t_Co=16
-
 let mapleader=' '
 
 " Disable netrw history from being created in ~/.vim/.netrwhist
@@ -129,35 +127,6 @@ nmap <leader>rn :GoRename<CR>
 
 " Pydocstring
 let g:pydocstring_doq_path = "~/.local/bin/doq"
-
-" Ale
-" let g:ale_fixers = {
-" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-" \   'rust': ['rustfmt'],
-" \   'python': ['yapf'],
-" \   'javascript': ['eslint'],
-" \}
-" let g:ale_linters = {
-" \   'c': ['ccls'],
-" \   'rust': ['rls', 'cargo'],
-" \   'go': ['gopls'],
-" \   'python': ['pylint'],
-" \   'javascript': ['eslint'],
-" \}
-" let g:ale_rust_cargo_use_clippy = 1
-" 
-" let g:ale_disable_lsp = 1
-" " let g:ale_sign_error = '⤫'
-" " let g:ale_sign_warning = '⚠'
-" let g:ale_completion_enabled = 0
-" let g:ale_fix_on_save = 1
-" 
-" noremap <Leader>ad :ALEGoToDefinition<CR>
-" noremap <Leader>af :ALEFix<CR>
-" noremap <Leader>ah :ALEHover<CR>
-" noremap <Leader>ar :ALEFindReferences<CR>
-" noremap <Leader>aj :ALENext<CR>
-" noremap <Leader>ak :ALEPrevious<CR>
 
 " CoC config
 let g:jedi#completions_enabled = 0
