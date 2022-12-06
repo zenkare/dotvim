@@ -7,8 +7,10 @@ $ git clone --recursive git@git.n1t0r.com:dotvim.git ~/.vim
 
 Go:
 
-$ sudo pacman -S go
-$ go get -u golang.org/x/tools/...
+Install the language using the distribution's package manager and then install
+the latest version of gopls:
+
+$ go install golang.org/x/tools/gopls@latest
 
 Installing plugins
 ==================
