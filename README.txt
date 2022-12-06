@@ -23,7 +23,7 @@ Removing plugins
 $ git rm <path-to-submodule>
 
 Git will keep the plugin to maintain the ability of checking commits that depend
-on them. In order to remove those remnants:
+on it. In order to remove those remnants:
 
 $ rm -rf .git/modules/<path-to-submodule>
 $ git config --remove-selection submodule.<path-to-submodule>
