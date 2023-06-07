@@ -3,8 +3,23 @@ filetype plugin indent on
 
 let mapleader=' '
 
-" Disable netrw history from being created in ~/.vim/.netrwhist
-let g:netrw_dirhistmax=0
+" Netrw banner.
+let g:netrw_banner = 0
+" Disable netrw history from being created in ~/.vim/.netrwhist.
+let g:netrw_dirhistmax = 0
+" Thin flat listing.
+let g:netrw_liststyle = 0
+" Set width of 25% of current window width.
+let g:netrw_winsize = 25
+" Open files from netrw in a previous window, unless we're opening the current dir.
+if argv(0) ==# '.'
+    let g:netrw_browse_split = 0
+else
+    let g:netrw_browse_split = 4
+endif
+" Ignore case when sorting.
+let g:netrw_sort_options = 'i'
+
 
 " Line numbers
 set number
