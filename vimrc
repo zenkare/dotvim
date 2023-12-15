@@ -59,6 +59,10 @@ set viminfo=
 set nobackup
 set noswapfile
 
+" Disable sign column, this removes diagnostic highlighting but if there's an
+" error I will notice and jump to it.
+set signcolumn=no
+
 " Delay between switching modes
 set ttimeoutlen=10
 set ttyfast
@@ -72,6 +76,8 @@ nnoremap <F7> 80A=<ESC>0
 " Insert current time
 nnoremap <F4> "=strftime("%s")<CR>P
 
+" Trim lines of white space.
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Completion
 set completeopt=menu,menuone,preview,noselect,noinsert
@@ -120,9 +126,9 @@ augroup END
 
 " Set colorscheme
 " colorscheme darkness
-colorscheme ghdark
+colorscheme gruvbox
 set bg=dark
-highlight Normal ctermbg=black
+highlight Normal ctermbg=NONE
 
 " PLUGIN CONFIGURATIONS
 
@@ -164,10 +170,6 @@ set nowritebackup
 " Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
 " delays and poor user experience
 set updatetime=300
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved
-set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate
 " NOTE: There's always complete item selected by default, you may want to enable
@@ -223,7 +225,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming
-nmap <F8> <Plug>(coc-rename)
+nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code
 xmap <leader>f  <Plug>(coc-format-selected)
