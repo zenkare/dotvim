@@ -34,3 +34,15 @@
 [submodule "pack/n1t0r/start/plenary.nvim"]
 	path = pack/n1t0r/start/plenary.nvim
 	url = https://github.com/nvim-lua/plenary.nvim.git
+[submodule "pack/n1t0r/start/copilot-cmp"]
+	path = pack/n1t0r/start/copilot-cmp
+	url = https://github.com/zbirenbaum/copilot-cmp.git
+[submodule "pack/n1t0r/start/copilot.lua"]
+	path = pack/n1t0r/start/copilot.lua
+	url = https://github.com/zbirenbaum/copilot.lua.git
+[submodule "pack/n1t0r/start/telescope.nvim"]
+	path = pack/n1t0r/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule "pack/n1t0r/start/nui.nvim"]
+	path = pack/n1t0r/start/nui.nvim
+	url = https://github.com/MunifTanjim/nui.nvim

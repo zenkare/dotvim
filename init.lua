@@ -52,9 +52,10 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set textwidth=80")
 
 -- Folding
-vim.cmd("set foldmethod=syntax")
-vim.cmd("set foldnestmax=1")
-vim.cmd("set foldclose=all")
+-- Disable for now because it doesn't work nicely with chatgpt.
+-- vim.cmd("set foldmethod=syntax")
+-- vim.cmd("set foldnestmax=1")
+-- vim.cmd("set foldclose=all")
 
 -- Disable viminfo logging
 vim.cmd("set viminfo=")
@@ -132,6 +133,55 @@ vim.cmd("set bg=dark")
 vim.cmd("highlight Normal ctermbg=NONE")
 
 -- PLUGIN CONFIGURATIONS
+
+-- Set up copilot
+require('copilot').setup({
+    panel = {
+        enabled = false,
+        auto_refresh = false,
+        keymap = {
+            jump_prev = "[[",
+            jump_next = "]]",
+            accept = "<CR>",
+            refresh = "gr",
+            open = "<M-CR>"
+        },
+        layout = {
+            position = "bottom", -- | top | left | right
+            ratio = 0.4
+        },
+    },
+    suggestion = {
+        enabled = true,
+        auto_trigger = false,
+        debounce = 75,
+        keymap = {
+            accept = "<M-l>",
+            accept_word = false,
+            accept_line = false,
+            next = "<M-]>",
+            prev = "<M-[>",
+            dismiss = "<C-]>",
+        },
+    },
+    filetypes = {
+        yaml = false,
+        markdown = false,
+        help = false,
+        gitcommit = false,
+        gitrebase = false,
+        hgcommit = false,
+        svn = false,
+        cvs = false,
+        ["."] = false,
+    },
+    copilot_node_command = 'node', -- Node.js version must be > 18.x
+    server_opts_overrides = {},
+})
+
+
+require("copilot_cmp").setup({})
+
 -- Set up nvim-cmp.
 local cmp = require('cmp')
 
@@ -142,6 +192,7 @@ cmp.setup({
             vim_item.kind = string.format('| %s', vim_item.kind)
             -- Source
             vim_item.menu = ({
+                copilot = "copilot",
                 buffer = "Buffer",
                 nvim_lsp = "LSP",
                 vsnip = "Snippet",
@@ -173,7 +224,7 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
-        { name = 'codeium',  priority = 50 },
+        { name = 'copilot',  priority = 50 },
         { name = 'nvim_lsp', priority = 40 },
         { name = 'vsnip',    priority = 30 },
         { name = 'buffer',   priority = 20 },
@@ -307,6 +358,3 @@ lspconfig.lua_ls.setup {
         },
     },
 }
-
--- Set up condeium
-require("codeium").setup({})
