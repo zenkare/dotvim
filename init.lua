@@ -153,6 +153,8 @@ Plug('zbirenbaum/copilot-cmp')
 Plug('zbirenbaum/copilot.lua')
 Plug('nvim-telescope/telescope.nvim')
 Plug('MunifTanjim/nui.nvim')
+Plug('nvim-tree/nvim-web-devicons')
+Plug('nvim-neo-tree/neo-tree.nvim')
 
 vim.call("plug#end")
 
