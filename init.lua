@@ -130,7 +130,8 @@ vim.cmd([[
 -- Set colorscheme
 vim.cmd("colorscheme gruvbox")
 vim.cmd("set bg=dark")
-vim.cmd("highlight Normal ctermbg=NONE")
+vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+vim.cmd("highlight NonText guibg=NONE ctermbg=NONE")
 
 -- PLUGIN CONFIGURATIONS
 local Plug = vim.fn["plug#"]
