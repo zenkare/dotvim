@@ -1,10 +1,3 @@
-[submodule "pack/n1t0r/start/coc.nvim"]
-	path = pack/n1t0r/start/coc.nvim
-    url = https://github.com/neoclide/coc.nvim.git
-    branch = release
-[submodule "pack/n1t0r/start/vim-repeat"]
-	path = pack/n1t0r/start/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
 [submodule "pack/n1t0r/start/vim-go"]
 	path = pack/n1t0r/start/vim-go
 	url = https://github.com/fatih/vim-go.git
