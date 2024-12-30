@@ -149,7 +149,7 @@ set omnifunc=ale#completion#OmniFunc
 set signcolumn=no
 nnoremap K <cmd>ALEHover<CR>
 nnoremap ]d <cmd>ALENext<CR>
-nnoremap d] <cmd>ALEPrevious<CR>
+nnoremap [d <cmd>ALEPrevious<CR>
 nnoremap <leader>gd <cmd>ALEGoToDefinition<CR>
 nnoremap <leader>gr <cmd>ALEFindReferences<CR>
 nnoremap <leader>ca <cmd>ALECodeAction<CR>
