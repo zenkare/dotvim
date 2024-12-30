@@ -154,6 +154,19 @@ nnoremap <leader>gd <cmd>ALEGoToDefinition<CR>
 nnoremap <leader>gr <cmd>ALEFindReferences<CR>
 nnoremap <leader>ca <cmd>ALECodeAction<CR>
 nnoremap <leader>rn <cmd>ALERename<CR>
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'rust': ['rustfmt'],
+\}
+let g:ale_linters = {
+\  'rust': ['analyzer'],
+\}
+" Extra rust flags.
+let g:ale_rust_rustfmt_options = '--edition 2018'
+let g:ale_rust_cargo_use_clippy = 1
+let g:ale_rust_cargo_check_tests = 1 
+let g:ale_rust_cargo_check_examples = 1
+let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 set completeopt=menuone,noselect
 
