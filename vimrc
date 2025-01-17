@@ -21,7 +21,12 @@ endif
 let g:netrw_sort_options = 'i'
 
 " Use system clipboard.
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
+
+" Use wayland clipboard.
+xnoremap "+y y:call system("wl-copy", @")<cr>
+nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '', 'g')<cr>p
+nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', '', 'g')<cr>p
 
 " Line numbers
 set number
@@ -142,6 +147,7 @@ set hidden
 call plug#begin()
 Plug 'dense-analysis/ale'
 " Plug 'gergap/vim-ollama'
+" Wait until graphics card upgrade.
 call plug#end()
 
 " Ale configuration.
@@ -164,7 +170,7 @@ let g:ale_linters = {
 " Extra rust flags.
 let g:ale_rust_rustfmt_options = '--edition 2018'
 let g:ale_rust_cargo_use_clippy = 1
-let g:ale_rust_cargo_check_tests = 1 
+let g:ale_rust_cargo_check_tests = 1
 let g:ale_rust_cargo_check_examples = 1
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
