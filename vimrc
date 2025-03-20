@@ -172,6 +172,10 @@ let g:ale_rust_rustfmt_options = '--edition 2018'
 let g:ale_rust_cargo_use_clippy = 1
 let g:ale_rust_cargo_check_tests = 1
 let g:ale_rust_cargo_check_examples = 1
+let g:ale_rust_analyzer_config = {
+\ 'cargo': { 'features': 'all' },
+\ 'check': { 'features': 'all' },
+\}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 set completeopt=menuone,noselect
