@@ -3,7 +3,7 @@ Personal vim configuration files.
 Installation & Dependencies
 ===========================
 
-$ git clone --recursive git@git.n1t0r.com:dotvim.git ~/.vim
+$ git clone --recursive git@git.n1t0r.com:dotvim.git ~/.config/nvim
 
 Go:
 
@@ -31,4 +31,4 @@ $ git config --remove-selection submodule.<path-to-submodule>
 Updating plugins
 ================
 
-$ git submodule update --recursive --remote 
+$ git submodule update --recursive --remote
